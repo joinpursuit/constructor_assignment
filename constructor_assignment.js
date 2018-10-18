@@ -8,8 +8,7 @@
 //     * console log their age again.
 //     * call eating on your human.
 
-class Human {
-  constructor(name, age){
+function Human (name, age){
     this.name = name;
     this.age = age;
   };
@@ -25,4 +24,3 @@ class Human {
     Trey.ageOneYear();
     console.log(Trey.age);
    Trey.eating();
-}
