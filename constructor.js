@@ -1,37 +1,34 @@
-# Constructor Exercises
-Jonathan Erquinigo
-1.
+//Jonathan Erquinigo
+/*1.
   * Create a Human constructor function that takes in a name and age.
   * Add a prototype function ageOneYear that ages the humans age.
   * Add a prototype function eating, that logs "mmm, mmm, mmm, I'm love'n it".
   * Create an instance of the Human class.
     * console log your humans age
-    * call ageOneYear on your human
+    * call ageOneYear on your human //im stuck on this part
     * console log their age again.
-    * call eating on your human.
-    function Human(name,age){
-      this.name = name;
-      this.age = age;
+    * call eating on your human.*/
 
-     }; // Human constructor
-    Human.prototype.ageOneYear = function(){
-          this.age++
-          console.log(this.age)
-        }; //ageOneYear end
-    Human.prototype.eating = function(){
-          console.log("mmm, mmm, mmm, I'm love'n it");
+function Human(name,age){
+  this.name = name;
+  this.age = age;
+}; // Human constructor
 
-        }; //eating age end
+Human.prototype.ageOneYear = function(){
+      this.age++
+      console.log(this.age)
+}; //ageOneYear end
+Human.prototype.eating = function(){
+      console.log("mmm, mmm, mmm, I'm love'n it");
+}; //eating age end
 
-    let jonathan = new Human("Jonathan",26)
+let jonathan = new Human("Jonathan",26)
+let mary = new Human("Mary", 30)
 
-    console.log(jonathan.age)
+jonathan.ageOneYear()
+jonathan.eating()
 
-    jonathan.ageOneYear()
-    jonathan.eating()
-
-2.
-Write a constructor Vector that represents a vector in two-dimensional space.
+/*Write a constructor Vector that represents a vector in two-dimensional space.
 It takes two number arguments: `x` and `y` parameters, which it should be saved to properties of the same name.
 
 Give the Vector prototype two methods, `plus` and `minus`, that take another vector as an argument and
@@ -51,7 +48,10 @@ console.log(v1.minus(v2));
 var v3 = new Vector(3, 4)
 console.log(v3.getLength());
 // => 5
-```
+```*/
+
+// var v1 = new Vector(1, 2)
+// var v2 = new Vector(2, 3)
 
 function Vector(x,y){
   this.x = x;
@@ -100,3 +100,16 @@ var v2 = new Vector(2, 3)
 console.log(v1.plus(v2))
 console.log(v1.minus(v2))
 console.log(v1.getLength(v2))
+//Vector(v1,v2)
+
+
+/*var v1 = new Vector(1, 2)
+var v2 = new Vector(2, 3)
+console.log(v1.plus(v2));
+// => Vector {x: 3, y: 5}
+console.log(v1.minus(v2));
+// => Vector {x: -1, y: -1}
+
+var v3 = new Vector(3, 4)
+console.log(v3.getLength());
+// => 5*/
