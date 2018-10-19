@@ -91,4 +91,5 @@ let v1 = new Vector(1, 2)
 let v2 = new Vector(3, 4)
 //console.log the return
 console.log(v1.plus(v2));
+console.log(v1.minus(v2));
 console.log(v2.getLength());
