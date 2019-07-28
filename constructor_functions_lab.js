@@ -33,11 +33,10 @@ print(william.firstName, 1);
 console.log("1b // Write a prototype function in `Person` called `fullName` that will return a formatted string of an instance's full name. \nCall this method on both the instances you created in part a.");
 
 Person.prototype.fullName = function() {
-  return console.log(`${this.firstName} ${this.middleName} ${this.lastName}`);
+  return (`${this.firstName} ${this.middleName} ${this.lastName}`);
 }
-william.fullName();
-franklin.fullName();
-print('', 1);
+print(william.fullName());
+print(franklin.fullName(), 1);
 //
 
 
@@ -120,9 +119,6 @@ snoopy.toString();
 print('');
 //
 
-// C = (F - 32) / 1.8
-// F = 1.8 * C + 32
-// K = C + 273
 
 // 4 //
 // a
