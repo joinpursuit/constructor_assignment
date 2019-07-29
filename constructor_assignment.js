@@ -116,23 +116,57 @@ console.log(dog3);
 // F = 1.8 * C + 32
 // K = C + 273
 //
-// a. Make an object called `freezingPoint` that has three properties: `celsius`, `fahrenheit`, and `kelvin`. Give them all values equal to the freezing point of water.
+// a. Make an object called `freezingPoint`
+// that has three properties: `celsius`, `fahrenheit`,
+//and `kelvin`. Give them all values equal to the freezing
+//point of water.
 //
-//
-// b. Make a constructor function called `Celsius` that has one property: `celsius`, and two methods `getFahrenheitTemp`, and `getKelvinTemp`.
-//
-// ```js
-// let outsideTempt = new Celsius(10.0)
-// tenDegreesCelsius.celsius //returns 10.0
-// tenDegreesCelsius.getKelvinTemp() //returns 283.0
-// tenDegreesCelsius.getFahrenheitTemp() //returns 50.0
-// ```
-//
-// c. Give `Celsius` a constructor function called `isBelowFreezing` that returns a `Bool` (true if the temperature is below freezing).
-//
+let freezingPoint = {
+  celsius: 0,
+  fahrenheit: 32,
+  kelvin: 273,
+}
+console.log(`The water's freezing temperature :`, freezingPoint);
+// b. Make a constructor function called
+ //`Celsius` that has one property:
+ //`celsius`, and two methods `getFahrenheitTemp`,
+ // and `getKelvinTemp`.
+ function Celsius (temperature) {
+   this.celsius = temperature
+   this.fahrenheit = function getFahrenheitTemp() {
+                       return 1.8 * this.celsius + 32
+                     };
+   this.felvin = function getKelvinTemp() {
+                   return this.celsius + 273;
+                 };
+
+ }
+
+ let outsideTempt = new Celsius(34.0);
+ console.log(`Outside temperature : `, outsideTempt.celsius, `C`);
+ console.log(`Outside temperature : `, outsideTempt.fahrenheit(), `F`);
+ console.log(`Outside temperature : `, outsideTempt.felvin(), `K`);
+
+
+// c. Give `Celsius` a constructor function
+//called `isBelowFreezing` that returns a `Bool`
+//(true if the temperature is below freezing).
+
+Celsius.prototype.isBelowFreezing = function () {
+  return (this.celsius < freezingPoint.celsius);
+}
+
+let temp1 = new Celsius(-10);
+let temp2 = new Celsius(35);
+
+console.log(temp1.celsius, `is bellow the freezing temperature`, temp1.isBelowFreezing());
+console.log(temp2.celsius, `is bellow the freezing temperature`, temp2.isBelowFreezing());
 // ## Question 5
 //
-// a. Create a constructor function called `Movie` that has properties for `name`, `year`, `genre`, `cast`, and `description`. Create an instance of your `Movie`
+// a. Create a constructor function called
+//`Movie` that has properties for `name`, `year`,
+//`genre`, `cast`, and `description`. Create an instance
+// of your `Movie`
 //
 // b. Create an prototype function inside `Movie` called `blurb` that returns a formatted string describing the movie.
 //
@@ -162,3 +196,24 @@ console.log(dog3);
 // console.log(v3.getLength());
 // // => 5
 // ```
+function Vector(x, y) {
+   this.x = x;
+   this.y = y;
+ }
+   Vector.prototype.plus = function(vect) {
+      return outVect = new Vector(this.x + vect.x, this.y + vect.y);
+    }
+
+    Vector.prototype.minus = function(vect) {
+     return outVect = new Vector(this.x - vect.x, this.y - vect.y);
+   }
+
+   let v1 = new Vector(1, 2);
+   let v2 = new Vector(2, 3);
+   console.log(`The sum of `, v1,` and `, v2, ` is `, v1.plus(v2));
+   console.log(`The difference of `, v1,` and `, v2, ` is `, v1.minus(v2));
+   Vector.prototype.getLength = function() {
+  return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+}
+var v3 = new Vector(3, 4)
+console.log('The length of ',v3, ' is ', v3.getLength());
