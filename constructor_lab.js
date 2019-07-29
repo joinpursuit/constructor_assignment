@@ -190,7 +190,24 @@ taxi.blurb()
 // console.log(v3.getLength());
 // // => 5
 
-function Vector( x, y) {
+function Vector(x, y) {
   this.x = x,
   this.y = y
 }
+
+let v1 = new Vector(1,2)
+let v2 = new Vector(2,3)
+let v3 = new Vector(3,4)
+
+Vector.prototype.plus = function(v) {
+  return `x: ${this.x + v.x} , y: ${this.y + v.y}`
+}
+Vector.prototype.minus = function(v) {
+  return `x: ${this.x - v.x} , y: ${this.y - v.y}`
+}
+Vector.prototype.getLength = function() {
+  return `${Math.sqrt(Math.pow(this.x,2) + Math.pow(this.y,2))}`
+}
+console.log(v1.plus(v2));
+console.log(v1.minus(v2));
+console.log(v3.getLength());
