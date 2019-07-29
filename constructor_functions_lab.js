@@ -4,12 +4,10 @@
 
 
 // global function declarations
-const print = function(forDisplay, bool) {
-  if (bool) { // for outputs
-    console.log(forDisplay,'\n');
-  } else { // for inputs
-    console.log(forDisplay);
-  }
+const print = function(logThis, bool) {
+  bool
+    ? console.log(logThis,'\n')  // for outputs
+    : console.log(logThis); // for inputs
 }
 
 
@@ -27,7 +25,7 @@ let william = new Person('William', 'Garrison', 'Lloyd');
 let franklin = new Person('Franklin', 'Roosevelt', 'Delano');
 print(william);
 print(franklin);
-print(william.firstName, 1);
+print(william.firstName);
 
 // b
 console.log("1b // Write a prototype function in `Person` called `fullName` that will return a formatted string of an instance's full name. \nCall this method on both the instances you created in part a.");
@@ -54,16 +52,13 @@ let earthsea = new Book('A Wizard of Earthsea', 'Ursula K. Le Guin', 6);
 let boiled = new Book('Hard-Boiled Wonderland & the End of the World', 'Haruki Murakami', 8);
 print(war);
 print(earthsea);
-print(boiled, 1);
+print(boiled);
 
 // b
 console.log("2b // Add a prototype function to `Book` called `isGood` that returns `true` if its rating is greater than or equal to 7");
 
 Book.prototype.isGood = function() {
-  if (this.rating >= 7) {
-    return true;
-  }
-  return false;
+   return this.rating >= 7;
 }
 print(war.isGood());
 print(earthsea.isGood());
@@ -113,10 +108,9 @@ print(snoopy);
 console.log('3d. Add a prototype function called `toString` that returns a description of the dog');
 
 Dog.prototype.toString = function() {
-  console.log(Object.values(this).join(', '));
+  return(Object.values(this).join(', '));
 }
-snoopy.toString();
-print('');
+print(snoopy.toString(), 1);
 //
 
 
@@ -149,10 +143,7 @@ print(outsideTempt.getFahrenheitTemp());
 // c
 console.log("4c // Give `Celsius` a prototype function called `isBelowFreezing` that returns a `Bool` (true if the temperature is below freezing).");
 Celsius.prototype.isBelowFreezing = function() {
-  if (this.celsius < 0) {
-    return true;
-  }
-  return false;
+  return this.celsius < 0;
 }
 print(`Input: ${outsideTempt.celsius}`);
 print(outsideTempt.isBelowFreezing(), 1);
