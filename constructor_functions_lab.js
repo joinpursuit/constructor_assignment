@@ -14,7 +14,8 @@ const print = function(logThis, bool) {
 
 // 1 //
 // a
-console.log("1a // Write a constructor function called `Person` that has 3 properties: a first name, a last name and a middle name.\nCreate 2 instances of a `Person`. Print one of their first names.");
+print("1a // Write a constructor function called `Person` that has 3 properties: a first name, a last name and a middle name.");
+print("Create 2 instances of a `Person`. Print one of their first names.");
 function Person(firstName, lastName, middleName) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -28,7 +29,8 @@ print(franklin);
 print(william.firstName);
 
 // b
-console.log("1b // Write a prototype function in `Person` called `fullName` that will return a formatted string of an instance's full name. \nCall this method on both the instances you created in part a.");
+print("1b // Write a prototype function in `Person` called `fullName` that will return a formatted string of an instance's full name.");
+print("Call this method on both the instances you created in part a.");
 
 Person.prototype.fullName = function() {
   return (`${this.firstName} ${this.middleName} ${this.lastName}`);
@@ -40,7 +42,7 @@ print(franklin.fullName(), 1);
 
 // 2 //
 // a
-console.log("2a // Create a constructor function called `Book` that has properties `title`, `author` and `rating`. Create some instances of `Book`.");
+print("2a // Create a constructor function called `Book` that has properties `title`, `author` and `rating`. Create some instances of `Book`.");
 function Book(title, author, rating) {
    this.title = title;
    this.author = author;
@@ -55,7 +57,7 @@ print(earthsea);
 print(boiled);
 
 // b
-console.log("2b // Add a prototype function to `Book` called `isGood` that returns `true` if its rating is greater than or equal to 7");
+print("2b // Add a prototype function to `Book` called `isGood` that returns `true` if its rating is greater than or equal to 7");
 
 Book.prototype.isGood = function() {
    return this.rating >= 7;
@@ -68,7 +70,7 @@ print(boiled.isGood(), 1);
 
 // 3 //
 // a
-console.log("3a // Create a `Dog` constructor function with four properties: `name (string), breed (string), mood (string), and hungry (boolean)`.");
+print("3a // Create a `Dog` constructor function with four properties: `name (string), breed (string), mood (string), and hungry (boolean)`.");
 
 function Dog(name, breed, mood, isHungry) {
   this.name = name;
@@ -80,7 +82,8 @@ let snoopy = new Dog('Snoopy', 'Beagle', 'sleepy', false);
 print(snoopy);
 
 // b
-console.log("3b // Add a prototype function called `playFetch`. It should set the dog's `hungry` property to `true`, set its mood property to `playful`, and log 'Ruff!'");
+print("3b // Add a prototype function called `playFetch`. It should set the dog's `hungry` property to `true`,");
+print("set its mood property to `playful`, and log 'Ruff!'");
 
 Dog.prototype.playFetch = function() {
   this.isHungry = true;
@@ -91,7 +94,8 @@ snoopy.playFetch();
 print(snoopy);
 
 // c
-console.log("3c. Add a prototype function called `feed`. If the dog is hungry, it should set `hungry` to `false` and print 'Woof!''\nIf the dog is not hungry, it should log 'The dog doesn't look hungry'");
+print("3c. Add a prototype function called `feed`. If the dog is hungry, it should set `hungry` to `false` and print 'Woof!'");
+print("If the dog is not hungry, it should log 'The dog doesn't look hungry'");
 
 Dog.prototype.feed = function() {
   if (this.isHungry) {
@@ -105,10 +109,14 @@ snoopy.feed();
 print(snoopy);
 
 // d
-console.log('3d. Add a prototype function called `toString` that returns a description of the dog');
+print('3d. Add a prototype function called `toString` that returns a description of the dog');
 
 Dog.prototype.toString = function() {
-  return(Object.values(this).join(', '));
+  let outputStr = Object.values(this);
+  this.isHungry
+    ? outputStr[outputStr.length - 1] = "hungry"
+    : outputStr[outputStr.length - 1] = "not hungry"
+  return outputStr.join(', ');
 }
 print(snoopy.toString(), 1);
 //
@@ -116,20 +124,21 @@ print(snoopy.toString(), 1);
 
 // 4 //
 // a
-console.log("4a // Make an object called `freezingPoint` that has three properties: `celsius`, `fahrenheit`, and `kelvin`.\nGive them all values equal to the freezing point of water.");
+print("4a // Make an object called `freezingPoint` that has three properties: `celsius`, `fahrenheit`, and `kelvin`.");
+print("Give them all values equal to the freezing point of water.");
 let freezingPoint = {
   celsius: 0,
   fahrenheit: 32,
   kelvin: 273.2
 }
-console.log(freezingPoint);
+print(freezingPoint);
 
 // b
-console.log("4b // Make a constructor function called `Celsius` that has one property: `celsius`, and two methods `getFahrenheitTemp`, and `getKelvinTemp`");
+print("4b // Make a constructor function called `Celsius` that has one property: `celsius`, and two methods `getFahrenheitTemp`, and `getKelvinTemp`");
 function Celsius(celsius) {
   this.celsius = celsius;
   this.getFahrenheitTemp = function() {
-    return (celsius * 9 / 5) + 32;
+    return celsius * 1.8 + 32;
   }
   this.getKelvinTemp = function() {
     return (celsius + 273.2);
@@ -141,9 +150,9 @@ print(outsideTempt.getKelvinTemp());
 print(outsideTempt.getFahrenheitTemp());
 
 // c
-console.log("4c // Give `Celsius` a prototype function called `isBelowFreezing` that returns a `Bool` (true if the temperature is below freezing).");
+print("4c // Give `Celsius` a prototype function called `isBelowFreezing` that returns a `Bool` (true if the temperature is below freezing).");
 Celsius.prototype.isBelowFreezing = function() {
-  return this.celsius < 0;
+  return this.celsius < freezingPoint.celsius;
 }
 print(`Input: ${outsideTempt.celsius}`);
 print(outsideTempt.isBelowFreezing(), 1);
@@ -152,7 +161,8 @@ print(outsideTempt.isBelowFreezing(), 1);
 
 // 5 //
 // a
-console.log("5a // Create a constructor function called `Movie` that has properties for `name`, `year`, `genre`, `cast`, and `description`.\nCreate an instance of your `Movie`");
+print("5a // Create a constructor function called `Movie` that has properties for `name`, `year`, `genre`, `cast`, and `description`.");
+print("Create an instance of your `Movie`");
 
 function Movie(name, year, genre, cast, description) {
   this.name = name;
@@ -171,7 +181,7 @@ let swiss = new Movie(
 print(swiss);
 
 // b
-console.log("5b // Create an prototype function inside `Movie` called `blurb` that returns a formatted string describing the movie.");
+print("5b // Create an prototype function inside `Movie` called `blurb` that returns a formatted string describing the movie.");
 Movie.prototype.blurb = function() {
   let castStr = this.cast;
   castStr[castStr.length - 1] = "and " + castStr[castStr.length - 1];
@@ -183,7 +193,7 @@ print(swiss.blurb(), 1);
 
 
 // 6 //
-console.log("6a // Write a constructor Vector that represents a vector in two-dimensional space.");
+print("6a // Write a constructor Vector that represents a vector in two-dimensional space.");
 function Vector(x, y) {
   this.x = x;
   this.y = y;
@@ -193,7 +203,7 @@ var v2 = new Vector(2, 3)
 print(v1);
 print(v2);
 
-console.log("6b // Give the Vector prototype two methods, `plus` and `minus`");
+print("6b // Give the Vector prototype two methods, `plus` and `minus`");
 Vector.prototype.plus = function(vector) {
   this.x = this.x + vector.x;
   this.y = this.y + vector.y;
@@ -207,7 +217,7 @@ Vector.prototype.minus = function(vector) {
 print(v1.plus(v2));
 print(v1.minus(v2));
 
-console.log("6c // Add a method `getLength` to the prototype that computes the length of the vector");
+print("6c // Add a method `getLength` to the prototype that computes the length of the vector");
 Vector.prototype.getLength = function() {
   return (this.x ** 2 + this.y ** 2) ** (1/2);
 }
