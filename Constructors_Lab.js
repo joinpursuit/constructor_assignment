@@ -245,7 +245,24 @@ console.log(" ")
 //
 //
 // ## Question 6
-//
+console.log("---------- #6 ----------")
+console.log("A)")
+
+function Vector(x, y) {
+  this.x = x;
+  this.y = y;
+}
+
+let v1 = new Vector(1, 2)
+let v2 = new Vector(2, 3)
+
+Vector.prototype.plus = function (v) {
+  return this.x + this.x && this.y + this.y
+}
+
+console.log(v1.plus(v2))
+
+console.log(" ")
 // Write a constructor Vector that represents a vector in two-dimensional space.
 // It takes two number arguments: `x` and `y` parameters, which it should be saved to properties of the same name.
 //
