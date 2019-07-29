@@ -161,7 +161,6 @@ Vector.prototype.minus = function(vector){
 
 v1.plus(v2)
 v1.minus(v2)
-
 // Add a method getLength to the prototype that computes the length of the vector ;
 // that is, the distance of the point (x, y) from the origin (0, 0).(a^2 + b^2 = c^2)
 Vector.prototype.length = function () {
