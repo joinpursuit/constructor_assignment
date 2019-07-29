@@ -23,7 +23,7 @@ Person.prototype.fullName = function () {
     console.log(`\n This person is: ${this.firstName} ${this.middleName} ${this.lastName}`); 
 }
 barack.fullName();
-
+james.fullName();
 // ## Question 2
 
 // a. Create a constructor function called 'Book' that has properties 'title', 'author' and 'rating'. Create some instances of 'Book'.
