@@ -8,38 +8,51 @@
 //Create 2 instances of a `Person`.
 //Print one of their first names.
 //
-var Family = {
-  firstName : 'Zoubair',
-  lastName : 'Jehhar',
-  middleName: 'Edmon',
-}
-  let faysal = new Family ('Faysal', 'Jehhar', 'Sherif');
-  let faris = new Family (' Faris', 'Jehhar', ' ');
-  for(let i = 0; i < Family.length; i++){
-    console.log(family[i].firstName)
-  }
   //=============================================
-  function Family(first, last, middle) {
-       this.firstname = first;
-       this.lastname = last;
-       this.middlename = middle;
-  }
+  function Family(firstName, lastName, middleName) {
+       this.firstName = firstName;
+       this.lastName = lastName;
+       this.middleName = middleName;
+  };
   let nephew = new Family ('Faysal', 'jehhar', 'Sherif')
-  let son = new Family (' Faris', 'jehharBazi', ' ');
+  let son = new Family ('Faris', 'jehharBazi', ' ');
   console.log(son.firstname)
 // b. Write a prototype function in `Person` called
 // `fullName` that will return a formatted string
 //of an instance's full name. Call this method on
 //both the instances you created in part a.
-Familly.prototype.fullName = function()
-
+Family.prototype.fullName = function() {
+ return `${this.firstName} ${this.lastName}`;
+}
+console.log("Son's full name:"+ " "+ son.fullName());
+console.log("Nephew's full name:"+ " " + nephew.fullName());
+// =================================================
 // ## Question 2
 //
-// a. Create a constructor function called `Book` that has properties `title`, `author` and `rating`. Create some instances of `Book`.
+// a. Create a constructor function called `Book`
+//that has properties `title`, `author` and `rating`.
+//Create some instances of `Book`.
 //
-//
-// b. Add a prototype function to `Book` called `isGood` that returns `true` if its rating is greater than or equal to 7
-//
+function Book (title, author, rating) {
+  this.title = title;
+  this.author = author;
+  this.rating = rating;
+};
+let book1 = new Book("The Silent Patient", "Alex Michaelides", 9.5);
+let book2 = new Book("The Wicked King (The Folk of the Air, #2)", "Holly Black", 9);
+let book3 = new Book("Ask Again, Yes", "Mary Beth Keane", 8);
+let book4 = new Book("Dianetics: The Modern Science of Mental Health ", "L. Ron Hubbard", 5);
+
+// b. Add a prototype function to `Book` called `isGood`
+//that returns `true` if its rating is
+//greater than or equal to 7
+Book.prototype.isGood = function () {
+  return this.rating >= 7;
+};
+console.log(`${book1.title} is a good book : ${book1.isGood()}`);
+console.log(`${book2.title} is a good book : ${book2.isGood()}`);
+console.log(`${book3.title} is a good book : ${book3.isGood()}`);
+console.log(`${book4.title} is a good book : ${book4.isGood()}`);
 // ## Question 3
 //
 // a. Create a `Dog` constructor function with four properties: `name (string), breed (string), mood (string), and hungry (boolean)`.
