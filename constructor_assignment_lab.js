@@ -159,14 +159,14 @@ var v2 = new Vector(2, 3)
 // Give the Vector prototype two methods, `plus` and `minus`, that take another vector as an argument and
 // returns a new vector that has the sum or difference of the two vectors’ (the one in `this` and the parameter) x and y values.
 Vector.prototype.plus = function (vector){
-  this.x + vector.x;
-  this.y + vector.y;
+  this.x += vector.x;
+  this.y += vector.y;
   return this;
 }
 
 Vector.prototype.minus = function (vector){
-    this.x -vector.x;
-    this.x-vector.y;
+    this.x-=vector.x;
+    this.x-=vector.y;
     return this;
 }
 console.log(v1.plus(v2));
@@ -181,6 +181,7 @@ return Math.sqrt(origin);
 }
 // ```js
 // var v1 = new Vector(1, 2)
+
 // var v2 = new Vector(2, 3)
 // console.log(v1.plus(v2));
 // // => Vector {x: 3, y: 5}
