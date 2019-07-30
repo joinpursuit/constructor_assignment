@@ -40,7 +40,7 @@ let tiamatsWrath = new Book("Timat's Wrath", 'James A. Corey', 8 );
 console.log(`\n2b. Add a prototype function to 'Book' called 'isGood' that returns 'true' if its rating is greater than or equal to 7`);
 
 Book.prototype.isGood = function () {
-    if (this.rating > 7){
+    if (this.rating >= 7){
         return true
     } else {
         return false
@@ -159,11 +159,15 @@ var v2 = new Vector(2, 3)
 // Give the Vector prototype two methods, `plus` and `minus`, that take another vector as an argument and
 // returns a new vector that has the sum or difference of the two vectors’ (the one in `this` and the parameter) x and y values.
 Vector.prototype.plus = function (vector){
- return (this.x + vector.x)+(this.y + vector.y)
+  this.x + vector.x;
+  this.y + vector.y;
+  return this;
 }
 
 Vector.prototype.minus = function (vector){
-    return (this.x -vector.x)-(this.x-vector.y)
+    this.x -vector.x;
+    this.x-vector.y;
+    return this;
 }
 console.log(v1.plus(v2));
 console.log(v1.minus(v2));
