@@ -16,14 +16,14 @@ const print = function(logThis, bool) {
 // a
 print("1a // Write a constructor function called `Person` that has 3 properties: a first name, a last name and a middle name.");
 print("Create 2 instances of a `Person`. Print one of their first names.");
-function Person(firstName, lastName, middleName) {
+function Person(firstName, middleName, lastName) {
   this.firstName = firstName;
-  this.lastName = lastName;
   this.middleName = middleName;
+  this.lastName = lastName;
 }
 
-let william = new Person('William', 'Garrison', 'Lloyd');
-let franklin = new Person('Franklin', 'Roosevelt', 'Delano');
+let william = new Person('William', 'Lloyd', 'Garrison');
+let franklin = new Person('Franklin', 'Delano', 'Roosevelt');
 print(william);
 print(franklin);
 print(william.firstName);
@@ -129,7 +129,7 @@ print("Give them all values equal to the freezing point of water.");
 let freezingPoint = {
   celsius: 0,
   fahrenheit: 32,
-  kelvin: 273.2
+  kelvin: 273.15
 }
 print(freezingPoint);
 
@@ -141,7 +141,7 @@ function Celsius(celsius) {
     return celsius * 1.8 + 32;
   }
   this.getKelvinTemp = function() {
-    return (celsius + 273.2);
+    return (celsius + 273.15);
   }
 }
 let outsideTempt = new Celsius(10.0);
@@ -184,9 +184,11 @@ print(swiss);
 print("5b // Create an prototype function inside `Movie` called `blurb` that returns a formatted string describing the movie.");
 Movie.prototype.blurb = function() {
   let castStr = this.cast;
-  castStr[castStr.length - 1] = "and " + castStr[castStr.length - 1];
+  if (castStr[1]) {
+    castStr[castStr.length - 1] = "and " + castStr[castStr.length - 1];
+  }
   castStr = castStr.join(', ');
-  return (`${this.name} came out in ${this.year}. A ${this.genre} film starring ${castStr}.\n${this.description}`);
+  return (`${this.name} came out in ${this.year}. A film of ${this.genre} starring ${castStr}.\n${this.description}`);
 }
 print(swiss.blurb(), 1);
 //
@@ -204,22 +206,24 @@ print(v1);
 print(v2);
 
 print("6b // Give the Vector prototype two methods, `plus` and `minus`");
-Vector.prototype.plus = function(vector) {
-  this.x = this.x + vector.x;
-  this.y = this.y + vector.y;
-  return this;
+Vector.prototype.plus = function(anotherVector) {
+  let outputVector = {};
+  outputVector.x = this.x + anotherVector.x;
+  outputVector.y = this.y + anotherVector.y;
+  return (`Vector: {x: ${outputVector.x}, y: ${outputVector.y}}`);
 }
-Vector.prototype.minus = function(vector) {
-  this.x = this.x - vector.x;
-  this.y = this.y - vector.y;
-  return this;
+Vector.prototype.minus = function(anotherVector) {
+  let outputVector = {};
+  outputVector.x = this.x - anotherVector.x;
+  outputVector.y = this.y - anotherVector.y;
+  return (`Vector: {x: ${outputVector.x}, y: ${outputVector.y}}`);
 }
 print(v1.plus(v2));
 print(v1.minus(v2));
 
 print("6c // Add a method `getLength` to the prototype that computes the length of the vector");
 Vector.prototype.getLength = function() {
-  return (this.x ** 2 + this.y ** 2) ** (1/2);
+  return (this.x ** 2 + this.y ** 2) ** (0.5);
 }
 
 var v3 = new Vector(3, 4)
