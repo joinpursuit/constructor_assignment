@@ -171,7 +171,20 @@ console.log(temp2.celsius, `is bellow the freezing temperature`, temp2.isBelowFr
 // b. Create an prototype function inside `Movie` called `blurb` that returns a formatted string describing the movie.
 //
 // Ex: "Borat came out in 2006. It was an odd film starring Sacha Baron Cohen as a man named Borat who was visiting America from Kazakhstan."
-//
+function Movie(name, year, genre, cast, description) {
+  this.name = name;
+  this.year = year;
+  this.genre = genre;
+  this.cast = cast;
+  this.description = description;
+}
+
+let myMovie = new Movie('The Lion King', 2019, 'Comedy',
+ ['Donald Glover','Beyoncé','Seth Rogen', 'Chiwetel Ejiofor', 'Billy Eichner'],
+ 'Simba idolizes his father, King Mufasa, and takes to heart his own royal destiny on the plains of Africa.');Movie.prototype.blurb = function(){
+   return this.name+' came out in '+this.year+'. \nIt\'s a '+this.genre+' movie starring '+this.cast[0]+ ' as '+this.description
+ }
+
 //
 // ## Question 6
 //
