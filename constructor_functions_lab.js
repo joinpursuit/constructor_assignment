@@ -16,16 +16,18 @@ const print = function(logThis, bool) {
 // a
 print("1a // Write a constructor function called `Person` that has 3 properties: a first name, a last name and a middle name.");
 print("Create 2 instances of a `Person`. Print one of their first names.");
-function Person(firstName, middleName, lastName) {
+function Person(firstName, lastName, middleName) {
   this.firstName = firstName;
-  this.middleName = middleName;
   this.lastName = lastName;
+  this.middleName = middleName;
 }
 
 let william = new Person('William', 'Lloyd', 'Garrison');
 let franklin = new Person('Franklin', 'Delano', 'Roosevelt');
+let mogar = new Person('Michael', 'Jones');
 print(william);
 print(franklin);
+print(mogar);
 print(william.firstName);
 
 // b
@@ -33,10 +35,11 @@ print("1b // Write a prototype function in `Person` called `fullName` that will 
 print("Call this method on both the instances you created in part a.");
 
 Person.prototype.fullName = function() {
-  return (`${this.firstName} ${this.middleName} ${this.lastName}`);
+  return (this.firstName + (this.middleName ? ` ${this.middleName}` : '') + ` ${this.lastName}`);
 }
 print(william.fullName());
-print(franklin.fullName(), 1);
+print(franklin.fullName());
+print(mogar.fullName(), 1);
 //
 
 
@@ -207,16 +210,10 @@ print(v2);
 
 print("6b // Give the Vector prototype two methods, `plus` and `minus`");
 Vector.prototype.plus = function(anotherVector) {
-  let outputVector = {};
-  outputVector.x = this.x + anotherVector.x;
-  outputVector.y = this.y + anotherVector.y;
-  return (`Vector: {x: ${outputVector.x}, y: ${outputVector.y}}`);
+  return (`Vector: {x: ${this.x + anotherVector.x}, y: ${this.y + anotherVector.y}`);
 }
 Vector.prototype.minus = function(anotherVector) {
-  let outputVector = {};
-  outputVector.x = this.x - anotherVector.x;
-  outputVector.y = this.y - anotherVector.y;
-  return (`Vector: {x: ${outputVector.x}, y: ${outputVector.y}}`);
+  return (`Vector: {x: ${this.x - anotherVector.x}, y: ${this.y - anotherVector.y}}`);
 }
 print(v1.plus(v2));
 print(v1.minus(v2));
