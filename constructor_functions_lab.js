@@ -190,7 +190,9 @@ Movie.prototype.blurb = function() {
   if (castStr[1]) {
     castStr[castStr.length - 1] = "and " + castStr[castStr.length - 1];
   }
-  castStr = castStr.join(', ');
+  castStr[2]
+    ? castStr = castStr.join(', ')
+    : castStr = castStr.join(' ');
   return (`${this.name} came out in ${this.year}. A film of ${this.genre} starring ${castStr}.\n${this.description}`);
 }
 print(swiss.blurb(), 1);
