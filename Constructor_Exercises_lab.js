@@ -259,3 +259,29 @@ console.log(movie.blurb())
 // console.log(v3.getLength());
 // // => 5
 // ```
+
+
+
+function Vector(x, y){
+  this.x = x;
+  this.y = y;
+}
+Vector.prototype.plus = function(vector){
+
+  console.log (vector.x + this.x, vector. y+ this.y )
+
+}
+Vector.prototype.minus = function(vector){
+  console.log (this.x - vector.x , this.y - vector.y )
+}
+Vector.prototype.getLength = function(){
+
+}
+
+let v1 = new Vector(1, 2)
+let v2 = new Vector(2, 3)
+console.log(v1.plus(v2));
+console.log(v1.minus(v2));
+
+var v3 = new Vector(3, 4)
+console.log(v3.getLength());
