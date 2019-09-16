@@ -67,9 +67,9 @@
 // //Create a `Dog` constructor function with four properties: `name (string), breed (string), mood (string), and hungry (boolean)`.
 // function Dog(name, breed, mood, hungry) {
 //   this.name = name;
-//   this.breed = breed
-//   this.mood = mood
-//   this.hungry = hungry
+//   this.breed = breed;
+//   this.mood = mood;
+//   this.hungry = hungry;
 // }
 //
 // let whiz = new Dog('Whiz', 'Pug', 'Chill', true)
@@ -94,35 +94,90 @@
 // dobby.playFetch()
 // console.log(dobby)
 
-
-
-
-console.log('QUESTION 6')
-
-function Vector(x, y) {
-  this.x = x;
-  this.y = y
+console.log('QUESTION 4')
+// There are three common scales that are used to measure temperature: Celsius, Fahrenheit, and Kelvin:
+let freezingPoint = {
+  celsius: 0,
+  fahrenheit:32,
+  kelvin:373
 }
 
-Vector.prototype.plus = function(vect) {
-  const newX = this.x + vect.x
-  const newY = this.y + vect.y
-  return new Vector(newX, newY)
+function Celcius(celcius) {
+  this.celcius = celcius
+}
+Celcius.prototype.isBelowFreezing = function() {
+  if (this.celcius < 0) {
+    return true
+  }
+  return false
 }
 
-Vector.prototype.minus = function(vect) {
-  const newX = this.x - vect.x
-  const newY = this.y - vect.y
-  return new Vector(newX, newY)
+let getFahrenheitTemp = new Celcius(`1.8 * ${this.celcius} + 32`);
+let getKelvinTemp = new Celcius(`${this.celcius} + 273`);
+
+
+
+console.log('QUESTION 5')
+
+// a. Create a constructor function called `Movie` that has properties for `name`, `year`, `genre`, `cast`, and `description`. Create an instance of your `Movie`
+//
+// b. Create an prototype function inside `Movie` called `blurb` that returns a formatted string describing the movie.
+//
+// Ex: "Borat came out in 2006. It was an odd film starring Sacha Baron Cohen as a man named Borat who was visiting America from Kazakhstan."
+
+function Movie(`name`, `year`, `genre`, `cast`,`description`) {
+  this.name = name;
+  this.year = year;
+  this.genre = genre;
+  this.cast = cast;
+  this.description = description;
+}
+Movie.prototype.blurb = function() {
+  console.log(`${this.name} came out in ${this.year}. ${this.description}`)
 }
 
-Vector.prototype.getLength = function() {
-  return this.x + this.y
-}
-var v1 = new Vector(1, 2)
-var v2 = new Vector(2, 3)
-var v3 = new Vector(3, 4)
+let lionKing = new Movie('Lion King', 2019, 'Family',
+'Donald Glover, Beyonce, Seth Rogan, Billy Eichner, Chiwetel Ejiofor',
+'Simba, a lion prince is banished after the death of his father, but takes back the throne from his evil Uncle')
 
-//console.log(v1.minus(v2));
 
-console.log(v3.getLength());
+
+
+// console.log('QUESTION 6')
+// Write a constructor Vector that represents a vector in two-dimensional space.
+// It takes two number arguments: `x` and `y` parameters, which it should be saved to properties of the same name.
+//
+// Give the Vector prototype two methods, `plus` and `minus`, that take another vector as an argument and
+// returns a new vector that has the sum or difference of the two vectors’ (the one in `this` and the parameter) x and y values.
+//
+// Add a method `getLength` to the prototype that computes the length of the vector ;
+// that is, the distance of the point (x, y) from the origin (0, 0).(a^2 + b^2 = c^2)
+
+
+// function Vector(x, y) {
+//   this.x = x;
+//   this.y = y
+// }
+//
+// Vector.prototype.plus = function(vect) {
+//   const newX = this.x + vect.x
+//   const newY = this.y + vect.y
+//   return new Vector(newX, newY)
+// }
+//
+// Vector.prototype.minus = function(vect) {
+//   const newX = this.x - vect.x
+//   const newY = this.y - vect.y
+//   return new Vector(newX, newY)
+// }
+//
+// Vector.prototype.getLength = function() {
+//   return this.x + this.y
+// }
+// var v1 = new Vector(1, 2)
+// var v2 = new Vector(2, 3)
+// var v3 = new Vector(3, 4)
+//
+// //console.log(v1.minus(v2));
+//
+// console.log(v3.getLength());
