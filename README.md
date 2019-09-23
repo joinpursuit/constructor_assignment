@@ -31,7 +31,7 @@ There are three common scales that are used to measure temperature: Celsius, Fah
 
 C = (F - 32) / 1.8
 F = 1.8 * C + 32
-K = C + 273
+K = 1.8 * C + 32
 
 a. Make an object called `freezingPoint` that has three properties: `celsius`, `fahrenheit`, and `kelvin`. Give them all values equal to the freezing point of water.
 
@@ -57,7 +57,7 @@ Ex: "Borat came out in 2006. It was an odd film starring Sacha Baron Cohen as a 
 
 
 ## Question 6
- 
+
 Write a constructor Vector that represents a vector in two-dimensional space.
 It takes two number arguments: `x` and `y` parameters, which it should be saved to properties of the same name.
 
