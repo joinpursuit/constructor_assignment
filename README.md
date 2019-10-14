@@ -81,3 +81,12 @@ var v3 = new Vector(3, 4)
 console.log(v3.getLength());
 // => 5
 ```
+
+## Question 7
+
+a. Write a constructor function called `Cylinder` that has properties `radius` and `height`.  Create an instance of a Cylinder.
+
+b. Add a prototype function `getVolume` that returns the [volume](https://www.mathopenref.com/cylindervolume.html)
+
+c. Add a prototype function `getSurfaceArea` that returns the [surface area](https://www.mathopenref.com/cylinderareamain.html)
+
