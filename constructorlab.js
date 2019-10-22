@@ -70,3 +70,94 @@ let benji = new Dog ('Benji', 'Morkie', 'lazy', true)
 //console.log(benji.toString())
 //console.log(benji.playFetch())
 //console.log(benji.feed())
+
+
+console.log("--Question 4a--")
+
+// let freezingpoint ={
+//     celsius: 0,
+//     fahrenheit: 32,
+//     kelvin:  273
+// }
+// console.log(freezingpoint.celsius)
+
+console.log("--Question 4b--")
+
+const celsius = () =>{
+    
+}
+
+
+
+class Celsius {
+    constructor(celsius){
+        this.celsius = celsius;
+    }
+
+    getFahrenheitTemp(){
+        return this.celsius*1.8+32
+    }
+    getKelvinTemp(){
+       return this.celsius+273
+    }
+    isBelowFreez(){
+        if(this.celsius<0){
+            return true
+        }
+        else{ return false}
+    }
+
+}
+
+let outsideTempt = new Celsius(10)
+
+
+// console.log(outsideTempt.celsius)
+//  //returns 10.0
+// console.log(outsideTempt.getKelvinTemp()) //returns 283.0
+// console.log(outsideTempt.getFahrenheitTemp()) //returns 50.0
+
+console.log("--Question 5--")
+
+class Movie {
+    constructor(name, year, genre, cast, description){
+        this.name = name;
+        this.year = year;
+        this.genre= genre;
+        this.cast = cast;
+        this.description = description
+    }
+    blurb(){
+        return `${this.name} came out in ${this.year}. it was odd film starring ${this.cast}. The Film is about ${this.description}`
+    }
+}
+
+let joker = new Movie("Joker", 2019, "Drama/Thriller", "Joaquin Phenix and Robert De Niro", "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.")
+console.log(joker)
+console.log(joker.blurb())
+
+
+console.log("--Question 6--")
+
+class Vector{
+    constructor(x,y){
+        this.x = x;
+        this.y = y
+    }
+    plus(vector){
+        return new Vector(this.x + vector.x, this.y + vector.y) 
+}
+    minus(vector){
+    return new Vector(this.x - vector.x, this.y - vector.y) 
+}
+    getLength(){
+        return (Math.sqrt((this.x * this.x) + (this.y * this.y)))
+    }
+
+}
+
+var v1 = new Vector(1, 2)
+var v2 = new Vector(2, 3)
+console.log(v1.minus(v2));
+var v3 = new Vector(3, 4)
+console.log(v3.getLength());
