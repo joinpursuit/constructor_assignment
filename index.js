@@ -154,21 +154,22 @@ function Post(datePosted,user,text){
     this.datePosted = datePosted
     this.user = user
     this.text = text
-}
-let todayDate = new Date()
-Post.prototype.today = function (){
-
-​   if (todayDate.getYear() === this.datePosted.getYear() && todayDate.getMonth() === this.datePosted.getMonth() && todayDate.getDay() === this.datePosted.getDay()){
+ }
+ let todayDate = new Date()
+ Post.prototype.today = function (){
+    if (todayDate.getYear() === this.datePosted.getYear() && todayDate.getMonth() === this.datePosted.getMonth() && todayDate.getDay() === this.datePosted.getDay()){
         return true
     }else{
        return false
     }
-}
-
-let post1 = new Post("October 27 2019", "Paul", "Hello")
-let post2 = new Post("September 29 2018", "Tim", "yerr")
-let post3 = new Post("Feburary 31 2020", "Kelly", "31st of feb.")
-let post = [post1, post2, post3]
-
-
-console.log(post1.todayDate())
+ }
+ let post1 = new Post(new Date("October 31 2018"),'dug','hi')
+ let post2 = new Post(new Date("October 27 2019"),'dug','bye')
+ let postObj = [
+    post1,
+    post2
+ ]
+ console.log(todayDate)
+ // console.log(postObj)
+ console.log(post2.today())
+ 
