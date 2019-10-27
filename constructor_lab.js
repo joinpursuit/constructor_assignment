@@ -12,8 +12,8 @@ function Person (firstName, lastName, middleName){
     // }
 
 
-let jay = new Person("jay", "Jones", "Ant")
-let evan = new Person("evan", "Jones", "joe")
+let jay = new Person("Jay", "Jones", "Ant")
+let evan = new Person("Evan", "Jones", "joe")
 
 console.log(jay)
 console.log(evan)
@@ -22,10 +22,10 @@ console.log(evan)
 //Call this method on both the instances you created in part a.
 
 Person.prototype.fullName = function() {
-return this.fullName + ""+ this.lastName
+return this.firstName + " "+ this.lastName
 }
 
-    console.log(evan.fullName)
+    console.log(evan.fullName())
     
 //2a. Create a constructor function called `Book` that has properties 
 //`title`, `author` and `rating`. Create some instances of `Book`.
@@ -39,6 +39,8 @@ function Book(title, author,rating){
 let twain = new Book("Author the Mouse", "Mark Twain", 10)
 
 //b. Add a prototype function to `Book` called `isGood` that returns `true` if its rating is greater than or equal to 7
-Book.prototype.isGood = true
+Book.prototype.isGood =  function() {
+    return true
+}
 
-console.log(twain.isGood)
+console.log(twain.isGood())
