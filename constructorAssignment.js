@@ -84,3 +84,4 @@ Dog.prototype.toString = function (){
   return this.name + " is a " + this.breed + " dog. Whose mood is " + this.mood + " and people always think this dog is hungry which is " + this.hungry + "."
 }
 console.log(toto.toString())
+
