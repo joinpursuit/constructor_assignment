@@ -97,3 +97,20 @@ outsideTempt.celsius //returns 10.0
 outsideTempt.getKelvinTemp() //returns 283.0
 outsideTempt.getFahrenheitTemp() //returns 50.0
 console.log(outsideTempt.isBelowFreezing())
+console.log('QUESTION 5')
+
+function Movie(name,year,genre,cast,description){
+        this.name = name
+        this.year = year
+        this.genre = genre
+        this.cast = cast
+        this.description =description
+}
+Movie.prototype.blurb = function(){
+    console.log(`${this.name}${this.year}${this.genre}${this.description}`)
+}
+let movie1 = new Movie('Coming to America ', '1984 ', 'comedy ', 'Eddie and Arsenio ', 'funny AF!');
+let movie2 = new Movie('Harlem Knights', '1986', 'comedy', 'Eddie and Richard', 'super funny!');
+movie1.blurb()
+
+console.log('QUESTION 6')
