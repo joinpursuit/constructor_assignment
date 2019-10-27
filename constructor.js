@@ -66,5 +66,34 @@ dog1.playFetch()
 dog1.feed()
 dog1.toString()
 
+console.log("Question 4")
 
 
+let freezingPoint = {
+    celsius: 0,
+    fahrenheit: 32,
+    kelvin: 273.2
+}
+function Celsius(celsius) {
+    this.celsius = celsius
+    
+}
+
+Celsius.prototype.getFahrenheitTemp = function() {
+    return 1.8 * this.celsius + 32
+}
+Celsius.prototype.getKelvinTemp = function() {
+    return this.celsius + 273
+}
+Celsius.prototype.isBelowFreezing = function() {
+    if(this.celsius < 0){
+        return true
+    } else {
+        return false
+    }
+}
+let outsideTempt = new Celsius(-1)
+outsideTempt.celsius //returns 10.0
+outsideTempt.getKelvinTemp() //returns 283.0
+outsideTempt.getFahrenheitTemp() //returns 50.0
+console.log(outsideTempt.isBelowFreezing())
