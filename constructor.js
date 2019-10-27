@@ -144,6 +144,7 @@ let outsideTempt = new Celsius(-1)
 // console.log(outsideTempt.getKelvinTemp())
 console.log(outsideTempt.isBelowFrezzing())
 
+<<<<<<< HEAD
 // ## Question 5
 
 // a. Create a constructor function called `Movie` that has properties for `name`, `year`, `genre`, `cast`, and `description`. Create an instance of your `Movie`
@@ -168,4 +169,4 @@ console.log(transformers.blurb())
 
 //
 
-dfakd;afd
+>>>>>>> 0032f1b35be7b685b55fc643887e92157fe44daf
