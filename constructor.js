@@ -114,3 +114,66 @@ let movie2 = new Movie('Harlem Knights', '1986', 'comedy', 'Eddie and Richard', 
 movie1.blurb()
 
 console.log('QUESTION 6')
+function Vector(x, y) {
+    this.x = x;
+    this.y = y;
+}
+​
+Vector.prototype.plus = function (vector) {
+   return new Vector(this.x + vector.x, this.y + vector.y)
+}
+​
+Vector.prototype.minus = function (vector) {
+   return new Vector(this.x - vector.x, this.y - vector.y)
+}
+​
+Vector.prototype.getLength = function (vector) {
+   return (Math.sqrt((this.x * this.x) + (this.y * this.y)))
+}
+​
+var v1 = new Vector(1, 2)
+var v2 = new Vector(2, 3)
+console.log(v1.plus(v2));
+
+console.log(v1.minus(v2));
+
+​
+var v3 = new Vector(3, 4)
+console.log(v3.getLength());
+console.log('QUESTION 7')
+
+
+function Cylinder(radius, height){
+    this.radius = radius
+    this.height = height
+}
+Cylinder.prototype.getVolume = function(){
+    return this.radius * this.radius * 3.14 * this.height
+}
+Cylinder.prototype.getSurfaceArea = function(){
+    return (this.radius * this.radius * 2 * 3.14)  + (this.radius * this.height*2 * 3.14)
+}
+let cylinder1 = new Cylinder(5,10)
+console.log(cylinder1.getSurfaceArea())
+
+console.log('QUESITON 8')
+
+function Post (datePosted, user, text){
+    this.datePosted = datePosted
+    this.user = user
+    this.text = text
+}
+let postObj = {
+
+}
+Post.prototype.postedToday = function(){
+    // let todaysDate = 
+    if(this.datePosted = todaysDate){
+        return true
+    } else {
+        return false
+    }
+}
+Post.prototype.filterPost = function(){
+    if()
+}
