@@ -133,3 +133,27 @@ let outsideTempt = new Celsius(0.0)
 console.log(outsideTempt.getKelvinTemp())
 console.log(outsideTempt.getFahrenheitTemp())
 console.log(outsideTempt.isBelowFreezing())
+
+// ## Question 5
+
+// a. Create a constructor function called `Movie` that has properties for `name`, `year`, `genre`, `cast`, and `description`. Create an instance of your `Movie`
+
+function Movie(name,year,genre,cast,description){
+    this.name = name
+    this.year = year
+    this.genre = genre
+    this.cast = cast
+    this.description = description
+}
+
+let moana = new Movie("Moana","2017","Kids",["Dwayne Johnson","Jermaine Clement","Nicole Scherzinger"],"Moana is a disney movie about a young girl who saves the ocean spirit.")
+
+// b. Create an prototype function inside `Movie` called `blurb` that returns a formatted string describing the movie.
+
+Movie.prototype.blurb = function(){
+    return this.description
+}
+
+// Ex: "Borat came out in 2006. It was an odd film starring Sacha Baron Cohen as a man named Borat who was visiting America from Kazakhstan."
+
+console.log(moana.blurb())
