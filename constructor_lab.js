@@ -218,3 +218,37 @@ Cylinder.prototype.getSurfaceArea = function(){
 console.log(cylinder.getVolume())
 console.log(cylinder.getSurfaceArea())
 
+// ## Question 8
+
+// a. Write a constructor function called `Post` that has properties `datePosted`, `user`, and `text`.  Create an array of `Post` objects.
+
+function Post(datePosted,user,text) {
+    this.datePosted = datePosted
+    this.user = user
+    this.text = text
+}
+
+let posts = [new Post(new Date(), "jay","Alphabet soup"), new Post(new Date("November 1 2017"), "cassidy","essay 1"), new Post(new Date("November 17 1911"),"ogle","oglethorpe hw")]
+
+// b. Create a prototype function that returns whether or not the post was made today.
+
+Post.prototype.postedToday = function(){
+ let today = new Date()
+    if (
+        this.datePosted.getDate() === today.getDate() && this.datePosted.getMonth() === today.getMonth() && this.datePosted.getFullYear() === today.getFullYear()
+    ){
+        return "Post was made today"
+    } else {
+        return "Post was not made today"
+    }
+}
+
+
+// c. Filter your array of `Post` objects to only include posts made today.
+
+let todaysPosts = posts.filter((el) => {
+    let today = new Date()
+   return el.datePosted.getDate() === today.getDate() && el.datePosted.getMonth() === today.getMonth() && el.datePosted.getFullYear() === today.getFullYear()
+})
+
+console.log(todaysPosts)
