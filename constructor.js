@@ -214,3 +214,30 @@ console.log(vec1.minus(vec2))
 
 let vec3 = new Vector(3,4)
 console.log(vec3.getLength())
+
+// ## Question 7
+
+// a. Write a constructor function called `Cylinder` that has properties `radius` and `height`.  Create an instance of a Cylinder.
+
+// b. Add a prototype function `getVolume` that returns the [volume](https://www.mathopenref.com/cylindervolume.html)
+
+// c. Add a prototype function `getSurfaceArea` that returns the [surface area](https://www.mathopenref.com/cylinderareamain.html)
+
+function Cylinder(radius, height) {
+    this.radius = radius;
+    this.height = height;
+}
+Cylinder.prototype.getVolume = function() {
+    let volume = Math.PI * (this.radius * this.radius) * (this.height) 
+    return volume
+}
+Cylinder.prototype.getSurfaceArea = function() {
+    let surfaceArea = (Math.PI * 2) * (this.radius) * (this.height) + (Math.PI * 2) * (this.radius * this.radius)
+    return surfaceArea
+}
+
+
+let circle = new Cylinder(5, 10)
+console.log(Math.PI * 2)
+console.log(circle.getVolume())
+console.log(circle.getSurfaceArea())
