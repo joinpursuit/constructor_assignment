@@ -9,7 +9,7 @@
 // }
 
 // let miles = new Person("Miles", "Ely", "Belize")
-// let Phill = new Person("Phill", "Swag", "Johnson")
+// let phill = new Person("Phill", "Swag", "Johnson")
 // console.log(miles)
 
 
@@ -214,4 +214,5 @@ let bottle = new Cylinder(3, 9)
 let now = new Date ()
 let postArr = [new Post(new Date(2019, 10, 27), "Sihame", "Whats up?")]
 
-console.log(postArr)
+console.log(postArr) 
+ 
