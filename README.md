@@ -211,7 +211,6 @@ Vector.prototype.getLength = function () {return Math.pow(this.x * this.x + this
 ```
 ## Question 7
 
-a. Write a constructor function called `Cylinder` that has properties `radius` and `height`.  Create an instance of a Cylinder.
 ```
 
 
@@ -232,16 +231,15 @@ Cylinder.prototype.getSurfaceArea = function () {
 
 }
 
-``
-b. Add a prototype function `getVolume` that returns the [volume](https://www.mathopenref.com/cylindervolume.html)
+```
 
-c. Add a prototype function `getSurfaceArea` that returns the [surface area](https://www.mathopenref.com/cylinderareamain.html)
 
 ## Question 8
 
 [Dates in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript#targetText=The%20Date%20object%20is%20a,the%20current%20date%20and%20time.)
 
 a. Write a constructor function called Post that has properties datePosted, user, and text. Create an array of Post objects.
+
 ```
 function Post (datePosted, user, text) {
     this.datePosted = datePosted;
@@ -249,33 +247,4 @@ function Post (datePosted, user, text) {
     this.text = text;
 } 
 
-let postObjs = [
-    new Post(new Date(2019,10,27), "corey", "Who's ready for some JavaScript"),
-    new Post(new Date(2019,10,26), "kelvin", "Idk man"),
-    new Post(new Date(2019,10,28), "kevin", "yerrrrr")
-]
-
- b. Create a prototype function that returns whether or not the post was made today.
-
-```
-Post.prototype.isPostedToday = function() {
-    let today = new Date();
-    if (today.getDate() === this.datePosted.getDate()){
-        return true;
-    } else {
-        return false;
-    }
-}
-console.log("Is this post today? " + postObjs[0].isPostedToday());
-console.log("Is this post today? " + postObjs[1].isPostedToday());
-`
-``
-c. Filter your array of `Post` objects to only include posts made today.
-
-```
-console.log(postObjs.filter((el) => {
-    if(el.isPostedToday()){
-        return el;
-    }
-}))
 ```
