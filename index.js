@@ -114,3 +114,30 @@ console.log(zola.toString())
   }
 let borat = new Movie ("Borat", 2006, "odd", "Sacha Baron Cohen", "man named Borat who was visiting America from Kazakhstan.")
 console.log(borat.blurb());
+
+// QUESTION:6
+
+
+
+
+// QUESTION: 7
+function Cylinder (radius,height){
+  this.radius = radius;
+  this.height = height;
+}
+Cylinder.prototype.getVolume = function() {return (Math.PI * (this.radius * this.radius) * this.height)}
+Cylinder.prototype.getSurfaceArea = function() {return (2* Math.PI * this.radius * this.height) + 2* Math.PI * (this.radius * this.radius)}
+let cylinder = new Cylinder(15,20)
+console.log(cylinder.getVolume());
+console.log(cylinder.getSurfaceArea());
+
+// QUESTION: 8
+function post(datePosted,user,text){
+  this.datePosted = datePosted
+  this.user = user;
+  this.text = text
+}
+post.prototype.today = function(){
+            
+  return
+ }
