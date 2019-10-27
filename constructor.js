@@ -22,5 +22,27 @@ console.log(phil)
 console.log(john)
 console.log(phil.fullName())
 
+// ## Question 2
 
+// a. Create a constructor function called `Book` that has properties `title`, `author` and `rating`. Create some instances of `Book`.
+
+function Book(title, author, rating) {
+    this.title = title;
+    this.author = author;
+    this.rating = rating;
+}
+    let harryPotter = new Book("Harry potter", "J K Rowling", 5);
+    let gameOfThrone = new Book("Game of Thrones", "George R R Martin", 9)
+
+// b. Add a prototype function to `Book` called `isGood` that returns `true` if its rating is greater than or equal to 7
+
+Book.prototype.isGood = function() {
+    if(this.rating >= 7){
+        return true;
+    } else {
+        return false
+    }
+}
+
+console.log(harryPotter.isGood())
 
