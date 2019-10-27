@@ -82,6 +82,18 @@ Celsius.prototype.getFahrenheitTemp= function() {
 Celsius.prototype.getKelvinTemp= function() {
     console.log(this.celsius+273);
 }    
-let outsideTemp = new Celsius(10.0)
+let outsideTemp = new Celsius(-10.0)
 outsideTemp.getFahrenheitTemp();
 outsideTemp.getKelvinTemp();
+
+Celsius.prototype.isBelowFreezing= function () {
+    bool=true;
+    if(this.celsius>0){
+        bool=false
+    }
+    console.log(bool)
+}
+
+outsideTemp.isBelowFreezing();
+
+//Q5
