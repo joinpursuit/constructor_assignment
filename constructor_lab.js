@@ -5,15 +5,15 @@
 // a. Write a constructor function called `Person` that has 3 properties: a first name, a last name and a middle name. Create 2 instances of a `Person`. Print one of their first names.
 //
 function Person(firstName, lastName, middleName) { // creagting a function that builds a function with three arg.
- this.firstName = firstName; // argument one
- this.lastName = lastName; // argument two
- this.middleName = middleName; // argument three
+  this.firstName = firstName; // argument one
+  this.lastName = lastName; // argument two
+  this.middleName = middleName; // argument three
 }
 const student = new Person('Stephanie', 'Ramirez', 'Estela');
 const relative = new Person('Emily', 'Ramirez', 'Paige') // creating a new argument name Student with value Stephanie
 console.log(student instanceof Person); // checking what information is in this new argument
 console.log(student instanceof Object);
- // checking what if new arguyment is an object or not
+// checking what if new arguyment is an object or not
 //instance of would only apply to objects made throu constructor function
 
 //
@@ -30,19 +30,19 @@ relative.fullName();
 // // a. Create a constructor function called `Book` that has properties `title`, `author` and `rating`. Create some instances of `Book`.
 //
 function Book(title, author, rating) { // double rating
-this.title = title
-this.author = author
-this.rating = rating
+  this.title = title
+  this.author = author
+  this.rating = rating
 };
-const religion = new Book ('Bible', 'Life.Church', 10)
+const religion = new Book('Bible', 'Life.Church', 10)
 const adventures = new Book('The Bad Begining: A series of unfortunate Events Series', 'Lemony Snicket', 8)
 const romance = new Book('Like water for chocolate', 'Laura Esquivel', 9)
 
 // //
 // // // b. Add a prototype function to `Book` called `isGood` that returns `true` if its rating is greater than or equal to 7
-Book.prototype.isGood = function() {
-  if(this.rating >= 7) {
-  return true
+Book.prototype.isGood = function () {
+  if (this.rating >= 7) {
+    return true
   }
 }
 console.log(religion.isGood())
