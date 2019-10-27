@@ -26,3 +26,19 @@ console.log(Apple)
 Apple.printName()
 
 
+
+
+// QUESTION 2
+
+function Book(title,aurthor,rating) {
+    this.title   =   title
+    this.aurthor = aurthor
+    this.rating = rating
+}
+Book.prototype.isGood = function () {if (this.rating >= 7){return true } else {return false} }
+let book1 = new Book('The Big Book Of Fun','Johny Walker', 6)
+
+console.log(book1.isGood())
+
+
+// Question 3
