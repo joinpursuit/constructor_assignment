@@ -116,7 +116,25 @@ let borat = new Movie ("Borat", 2006, "odd", "Sacha Baron Cohen", "man named Bor
 console.log(borat.blurb());
 
 // QUESTION:6
-
+function Vector(x, y) {
+    this.x = x;
+    this.y = y;
+}
+Vector.prototype.plus = function (vector) {
+   return new Vector(this.x + vector.x, this.y + vector.y)
+}
+Vector.prototype.minus = function (vector) {
+   return new Vector(this.x - vector.x, this.y - vector.y)
+}
+Vector.prototype.getLength = function (vector) {
+   return (Math.sqrt((this.x * this.x) + (this.y * this.y)))
+}
+var v1 = new Vector(1, 2)
+var v2 = new Vector(2, 3)
+console.log(v1.plus(v2));
+console.log(v1.minus(v2));
+var v3 = new Vector(3, 4)
+console.log(v3.getLength());
 
 
 
@@ -132,12 +150,25 @@ console.log(cylinder.getVolume());
 console.log(cylinder.getSurfaceArea());
 
 // QUESTION: 8
-function post(datePosted,user,text){
-  this.datePosted = datePosted
-  this.user = user;
-  this.text = text
+function Post(datePosted,user,text){
+    this.datePosted = datePosted
+    this.user = user
+    this.text = text
 }
-post.prototype.today = function(){
-            
-  return
- }
+let todayDate = new Date()
+Post.prototype.today = function (){
+
+​   if (todayDate.getYear() === this.datePosted.getYear() && todayDate.getMonth() === this.datePosted.getMonth() && todayDate.getDay() === this.datePosted.getDay()){
+        return true
+    }else{
+       return false
+    }
+}
+
+let post1 = new Post("October 27 2019", "Paul", "Hello")
+let post2 = new Post("September 29 2018", "Tim", "yerr")
+let post3 = new Post("Feburary 31 2020", "Kelly", "31st of feb.")
+let post = [post1, post2, post3]
+
+
+console.log(post1.todayDate())
