@@ -83,8 +83,8 @@ Celsius.prototype.getKelvinTemp= function() {
     console.log(this.celsius+273);
 }    
 let outsideTemp = new Celsius(-10.0)
-outsideTemp.getFahrenheitTemp();
-outsideTemp.getKelvinTemp();
+// outsideTemp.getFahrenheitTemp();
+// outsideTemp.getKelvinTemp();
 
 Celsius.prototype.isBelowFreezing= function () {
     bool=true;
@@ -94,7 +94,7 @@ Celsius.prototype.isBelowFreezing= function () {
     console.log(bool)
 }
 
-outsideTemp.isBelowFreezing();
+// outsideTemp.isBelowFreezing();
 
 //Q5
 function Movie(name, year, genre, cast, description) {
@@ -122,23 +122,45 @@ function Vector(x,y) {
 Vector.prototype.plus= function(vector){
     {return { x: (this.x + vector.x), y: (this.y + vector.y),}};
 }
-var v1 = new Vector(3, 4)
-var v2 = new Vector(2, 3)
+let v1 = new Vector(3, 4)
+let v2 = new Vector(2, 3)
 
 // let v1= new Vector(1,2);
 // v1.plus(2,3);
 
 // let v2 = new Vector(2,3);
-console.log(v1.plus(v2));
+// console.log(v1.plus(v2));
 
 Vector.prototype.minus= function(vector){
     {return { x: (this.x - vector.x), y: (this.y - vector.y),}};
 }
-console.log(v1.minus(v2));
+// console.log(v1.minus(v2));
 Vector.prototype.getLength=function(){
     let c = Math.pow(this.x, 2) + Math.pow(this.y, 2)
     return Math.sqrt(c);
 }
-console.log (v1.getLength());
+// console.log (v1.getLength());
 
 //Q7
+function Cylinder(radius, height) {
+    this.radius = radius;
+    this.height = height
+}
+
+let cyl = new Cylinder(5, 7)
+
+Cylinder.prototype.getVolume = function() {
+    volume = Math.PI * Math.pow(this.radius, 2) * this.height;
+    return volume;
+}
+
+// console.log(cyl.getVolume());
+
+Cylinder.prototype.getSurfaceArea = function() {
+    area = (2 * Math.PI * Math.pow(this.radius, 2)) + (2 * Math.PI * this.radius * this.height);
+    return area;
+}
+
+// console.log(cyl.getSurfaceArea());
+
+//Q8
