@@ -127,8 +127,22 @@ console.log(outsideTempt.isBelowFreezing())
 // ## Question 5
 
 // a. Create a constructor function called `Movie` that has properties for `name`, `year`, `genre`, `cast`, and `description`. Create an instance of your `Movie`
+function Movie (name,year,genre,cast, description){
+    this.name = name;
+    this.year = year;
+    this.genre = genre;
+    this.cast = cast;
+    this.description = description;
+}
+let movie = new Movie( "harry potter" , 2009, "fantasy", "Daniel Radcliff", "battle of the wizards")
 
 // b. Create an prototype function inside `Movie` called `blurb` that returns a formatted string describing the movie.
+
+Movie.prototype.blurb = function(){
+    return this.name + " was made in " + this.year + " was a " + this.genre + " film about " + this.description
+}
+
+console.log(movie.blurb())
 
 // Ex: "Borat came out in 2006. It was an odd film starring Sacha Baron Cohen as a man named Borat who was visiting America from Kazakhstan."
 
@@ -138,34 +152,75 @@ console.log(outsideTempt.isBelowFreezing())
 // Write a constructor Vector that represents a vector in two-dimensional space.
 // It takes two number arguments: `x` and `y` parameters, which it should be saved to properties of the same name.
 
+function Vector(x,y){
+    this.x = x;
+    this.y = y
+}
+
 // Give the Vector prototype two methods, `plus` and `minus`, that take another vector as an argument and
 // returns a new vector that has the sum or difference of the two vectors’ (the one in `this` and the parameter) x and y values.
+Vector.prototype.plus = function(newVector){
+    let newX = this.x + newVector.x;
+    let newY = this.y + newVector.y
+    let newVec = new Vector(newX,newY)
+    return newVec
+}
+
+Vector.prototype.minus = function(newVector){
+    let newX = this.x - newVector.x;
+    let newY = this.y - newVector.y
+    let newVec = new Vector(newX,newY)
+    return newVec
+}
+
+
 
 // Add a method `getLength` to the prototype that computes the length of the vector ;
 // that is, the distance of the point (x, y) from the origin (0, 0).(a^2 + b^2 = c^2)
 
 // [Vectors at mathisfun.com](https://www.mathsisfun.com/algebra/vectors.html)
 
+Vector.prototype.getLength = function(){
+    return Math.sqrt(Math.pow(this.x,2)+Math.pow(this.y,2))
+
+}
+
 // ```js
-// var v1 = new Vector(1, 2)
-// var v2 = new Vector(2, 3)
-// console.log(v1.plus(v2));
+let v1 = new Vector(1, 2)
+let v2 = new Vector(2, 3)
+console.log(v1.plus(v2));
 // // => Vector {x: 3, y: 5}
-// console.log(v1.minus(v2));
+console.log(v1.minus(v2));
 // // => Vector {x: -1, y: -1}
 
-// var v3 = new Vector(3, 4)
-// console.log(v3.getLength());
+var v3 = new Vector(3, 4)
+console.log(v3.getLength());
 // // => 5
 // ```
 
 // ## Question 7
 
 // a. Write a constructor function called `Cylinder` that has properties `radius` and `height`.  Create an instance of a Cylinder.
+function Cylinder(radius, height){
+    this.radius = radius;
+    this.height = height;
+}
+
+let cylinder1 = new Cylinder (4,7)
 
 // b. Add a prototype function `getVolume` that returns the [volume](https://www.mathopenref.com/cylindervolume.html)
 
+Cylinder.prototype.getVolume = function(){
+    return Math.PI*Math.pow(this.radius,2)*this.height
+}
+
+console.log(cylinder1.getVolume())
 // c. Add a prototype function `getSurfaceArea` that returns the [surface area](https://www.mathopenref.com/cylinderareamain.html)
+Cylinder.prototype.getSurfaceArea = function(){
+    return Math.PI*Math.pow(this.radius,2)
+}
+
+console.log(cylinder1.getSurfaceArea())
 
 // ## Question 8
 
@@ -173,6 +228,33 @@ console.log(outsideTempt.isBelowFreezing())
 
 // a. Write a constructor function called `Post` that has properties `datePosted`, `user`, and `text`.  Create an array of `Post` objects.
 
+function Post(datePosted,user, text) {
+    this.datePosted = datePosted;
+    this.user = user
+    this.text = text
+}
+
+let post1 = new Post(new Date("2019/10/27"),"corey","hi")
+let post2 = new Post(new Date("2019/10/26"),"john","bye")
+let post3 = new Post(new Date("2019/10/25"),"celine","bonjour")
+
+posts = [post1,post2,post3]
+console.log(posts)
 // b. Create a prototype function that returns whether or not the post was made today.
+Post.prototype.madeToday= function(){
+     if(this.datePosted.getDate() === new Date().getDate()){
+        return true
+    } else{
+        return false
+    }
+}
+
+console.log(posts.map(el =>{
+    return el.madeToday()
+}))
 
 // c. Filter your array of `Post` objects to only include posts made today.
+
+console.log(posts.filter(el =>{
+    return el.datePosted.getDate() === new Date().getDate()
+}))
