@@ -157,3 +157,37 @@ Movie.prototype.blurb = function(){
 // Ex: "Borat came out in 2006. It was an odd film starring Sacha Baron Cohen as a man named Borat who was visiting America from Kazakhstan."
 
 console.log(moana.blurb())
+
+// ## Question 6
+
+// Write a constructor Vector that represents a vector in two-dimensional space.
+// It takes two number arguments: `x` and `y` parameters, which it should be saved to properties of the same name.
+
+// Give the Vector prototype two methods, `plus` and `minus`, that take another vector as an argument and
+// returns a new vector that has the sum or difference of the two vectors’ (the one in `this` and the parameter) x and y values.
+
+// Add a method `getLength` to the prototype that computes the length of the vector ;
+// that is, the distance of the point (x, y) from the origin (0, 0).(a^2 + b^2 = c^2)
+
+function Vector (x,y) {
+    this.x = x
+    this.y = y
+}
+
+Vector.prototype.plus = function(vector){
+    return new Vector(this.x + vector["x"], this.y + vector["y"])
+}
+
+Vector.prototype.minus = function(vector){
+    return new Vector(this.x + -vector["x"], this.y + -vector["y"])
+}
+
+Vector.prototype.getLength = function(){
+    return Math.sqrt(Math.pow(this.x,2) + Math.pow(this.y,2))
+}
+let vector1 = new Vector(10,11)
+let vector2 = new Vector(5,6)
+
+console.log(vector1.plus(vector2))
+console.log(vector1.minus(vector2))
+console.log(vector1.getLength())
