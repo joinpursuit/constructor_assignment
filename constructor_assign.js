@@ -126,16 +126,44 @@
 // console.log(v3.getLength());
 // // => 5
 
-function Cylinder (radius, height) {
-    this.radius = radius;
-    this.height = height;
-}
+// function Cylinder (radius, height) {
+//     this.radius = radius;
+//     this.height = height;
+// }
 
-Cylinder.prototype.getVolume = function (){
-   return Math.floor(Math.PI * Math.pow(this.radius, 2)* this.height)
+// Cylinder.prototype.getVolume = function (){
+//    return Math.floor(Math.PI * Math.pow(this.radius, 2)* this.height)
+// }
+// Cylinder.prototype.getSurfaceArea = function (){
+//     return Math.floor((2(Math.PI * Math.pow(this.radius, 2))) + (2(Math.PI * Math.pow(this.radius) * this.height)))
+// }
+// let newCyn = new Cylinder (9,8)
+// console.log(newCyn.getVolume())
+
+function Post (datePosted, user, text){
+    this.datePosted = datePosted;
+    this.user = user;
+    this.text = text;
 }
-Cylinder.prototype.getSurfaceArea = function (){
-    return Math.floor((2(Math.PI * Math.pow(this.radius, 2))) + (2(Math.PI * Math.pow(this.radius) * this.height)))
-}
-let newCyn = new Cylinder (9,8)
-console.log(newCyn.getVolume())
+const postObjs = [
+    new Post(new Date(2019,10,27), "corey", "Who's ready for some JavaScript"),
+    new Post(new Date(2019,10,26), "kelvin", "Idk man"),
+    new Post(new Date(2019,10,28), "kevin", "yerrrrr")
+]
+
+Post.prototype.isPostedToday = function() {
+    let today = new Date();
+    if (today.getDate() === this.datePosted.getDate()){
+        return true;
+    } else {
+        return false;
+    }
+ }
+ console.log(`Is ${this.post} today? ” + ${postObjs[0].isPostedToday()}`);
+ console.log(`Is ${this.post} today? ” + ${postObjs[1].isPostedToday()}`);
+ // c. Filter your array of `Post` objects to only include posts made today.
+ console.log(postObjs.filter((el) => {
+    if(el.isPostedToday()){
+        return el;
+    }
+ }))
