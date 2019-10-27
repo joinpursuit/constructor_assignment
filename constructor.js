@@ -140,6 +140,6 @@ Celsius.prototype.isBelowFrezzing = function() {
 }
 
 let outsideTempt = new Celsius(-1)
-console.log(outsideTempt.getFahrenheitTemp())
+// console.log(outsideTempt.getFahrenheitTemp())
 // console.log(outsideTempt.getKelvinTemp())
 console.log(outsideTempt.isBelowFrezzing())
