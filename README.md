@@ -236,7 +236,6 @@ Cylinder.prototype.getSurfaceArea = function () {
 
 ## Question 8
 
-[Dates in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript#targetText=The%20Date%20object%20is%20a,the%20current%20date%20and%20time.)
 
 a. Write a constructor function called Post that has properties datePosted, user, and text. Create an array of Post objects.
 
