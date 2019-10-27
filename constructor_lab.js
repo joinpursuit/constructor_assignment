@@ -129,7 +129,7 @@ Celsius.prototype.isBelowFreezing = function(){
         return "The temp is not below freezing"
     }
 }
-let outsideTempt = new Celsius(0.0)
+let outsideTempt = new Celsius(.0)
 console.log(outsideTempt.getKelvinTemp())
 console.log(outsideTempt.getFahrenheitTemp())
 console.log(outsideTempt.isBelowFreezing())
