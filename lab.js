@@ -42,3 +42,43 @@ console.log(book1.isGood())
 
 
 // Question 3
+// a. Create a `Dog` constructor function with four
+//  properties: `name (string), breed (string), mood (string), and hungry (boolean)`.
+
+// b. Add a prototype function called `playFetch`.
+//  It should set the dog's `hungry` property to `true`, 
+//  set its mood property to `playful`, and log "Ruff!"
+
+
+function Dog (name,breed,mood,hungry){
+
+    this.name = name
+    this.breed = breed
+    this.mood = mood
+    this.hungry = hungry
+
+
+}
+
+Dog.prototype.playFetch = function (){ this.hungry = true, this.mood = "playfull", console.log("Ruff! Ruff!")}
+
+Dog.prototype.feed = function(){
+    if(this.hungry === true){
+
+        this.hungry = false
+        console.log("Woof!")
+    }else{
+
+        console.log("The dog doesnt look hungy!")
+    }
+
+}
+
+Dog.prototype.toString = function(){console.log(`${this.name} is a ${this.breed} and is ${this.mood} that is ${this.hungry}`) }
+
+
+let dog1 = new Dog ("Goodboy", "Pitbull","Happy", true)
+
+dog1.toString()
+
+
