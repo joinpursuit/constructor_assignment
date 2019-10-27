@@ -149,3 +149,30 @@ console.log(v1.minus(v2))
 var v3 = new Vector(3, 4)
 console.log(v3.getLength())
 
+
+// Question 7
+
+function Cylinder(radius,height){
+
+    this.radius = radius
+    this.height = height
+
+}
+
+Cylinder.prototype.getVolume = function () {
+    return Math.floor(Math.PI *(this.radius*this.radius) * this.height)
+}
+
+//area	=	2	π	 r	2 	+	2	π	r	h
+
+Cylinder.prototype.getSurfaceArea = function () {
+    return Math.floor(((2 * Math.PI)* Math.pow(this.radius,2) ) + (2 * Math.PI * this.radius * this.height))
+
+}
+
+
+let Cylinder1 = new Cylinder (2,3)
+
+console.log(Cylinder1.getVolume())
+
+console.log(Cylinder1.getSurfaceArea())
