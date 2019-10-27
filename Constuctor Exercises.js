@@ -77,3 +77,58 @@ let pokey = new Dog("Pokey", "huskey", "playful", false)
 let roxy = new Dog("Roxy", "mutt", "playful", false)
 
 console.log(roxy.playFetch())
+
+
+// ## Question 4
+
+// There are three common scales that are used to measure 
+// temperature: Celsius, Fahrenheit, and Kelvin:
+
+// C = (F - 32) / 1.8
+// F = 1.8 * C + 32
+// K = C + 273
+
+// a. Make an object called `freezingPoint` that has three 
+// properties: `celsius`, `fahrenheit`, and `kelvin`. Give them all values 
+// equal to the freezing point of water.
+
+// b. Make a constructor function called `Celsius` that has one 
+// property: `celsius`, and two methods `getFahrenheitTemp`, 
+// and `getKelvinTemp`.
+
+// ```js
+// let outsideTempt = new Celsius(10.0)
+// outsideTempt.celsius //returns 10.0
+// outsideTempt.getKelvinTemp() //returns 283.0
+// outsideTempt.getFahrenheitTemp() //returns 50.0
+// ```
+
+// c. Give `Celsius` a prototype function called `isBelowFreezing` 
+// that returns a `Bool` (true if the temperature is below freezing).
+
+let freezingPoint = {celsius: 0 , fahrenheit: 32, kelvin: -273}
+
+function Celsius(celsius) {
+    this.celsius = celsius;
+}
+Celsius.prototype.getFahrenheitTemp = function(){
+    return this.getFharenheitTemp = 1.8 * this.celsius + 32
+}
+Celsius.prototype.getKelvinTemp = function() {
+    return this.getKelvinTemp = this.celsius + 273;
+}
+
+Celsius.prototype.isBelowFreezing = function() {
+    if(this.celsius <= 0) {
+        return true
+    } else {
+        return false
+    }
+}
+
+let outsideTempt = new Celsius(10.0)
+console.log(outsideTempt.celsius) //returns 10.0
+console.log(outsideTempt.getKelvinTemp()) //returns 283.0
+console.log(outsideTempt.getFahrenheitTemp()) //returns 50.0
+
+
