@@ -183,7 +183,7 @@ let postObjs = [
     new Post(new Date(2019, 07, 04), "Captain America", "It's Fourth of July"),
     new Post(new Date(2019, 10, 27), "Spiderman ", " Today's date"),
     new Post(new Date(2019, 01, 01), "Batman", "Happy New Year")
-]
+] 
 
 // b. Create a prototype function that returns whether or not the post was made today.
 
