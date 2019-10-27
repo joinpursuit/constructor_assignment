@@ -79,6 +79,25 @@ Dog.prototype.toString = function(){console.log(`${this.name} is a ${this.breed}
 
 let dog1 = new Dog ("Goodboy", "Pitbull","Happy", true)
 
-dog1.toString()
+// dog1.toString()
+
+
+
+// Question 4
+
+
+const freezingPoint = {celsius: 0, fahrenheit: 32, kelvin: 273}
+
+function Celsius(celsius){
+    this.celsius = celsius
+}
+Celsius.prototype.getFahrenheitTemp = function () {return (1.8 * this.celsius) + 32}
+
+Celsius.prototype.getKelvinTemp =  function () {return this.celsius + 273} 
+
+let outsideTempt = new Celsius(10.0)
+console.log(outsideTempt)
+console.log(outsideTempt.getFahrenheitTemp())
+console.log(outsideTempt.getKelvinTemp())
 
 
