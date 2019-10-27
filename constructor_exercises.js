@@ -115,3 +115,30 @@ Movie.prototype.blurb = function() {
 
 //Q6
 
+function Vector(x,y) {
+    this.x=x;
+    this.y=y;
+}
+Vector.prototype.plus= function(vector){
+    {return { x: (this.x + vector.x), y: (this.y + vector.y),}};
+}
+var v1 = new Vector(3, 4)
+var v2 = new Vector(2, 3)
+
+// let v1= new Vector(1,2);
+// v1.plus(2,3);
+
+// let v2 = new Vector(2,3);
+console.log(v1.plus(v2));
+
+Vector.prototype.minus= function(vector){
+    {return { x: (this.x - vector.x), y: (this.y - vector.y),}};
+}
+console.log(v1.minus(v2));
+Vector.prototype.getLength=function(){
+    let c = Math.pow(this.x, 2) + Math.pow(this.y, 2)
+    return Math.sqrt(c);
+}
+console.log (v1.getLength());
+
+//Q7
