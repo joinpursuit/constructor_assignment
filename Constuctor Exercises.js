@@ -41,5 +41,39 @@ console.log(haverbeke.isGood());
 // `name (string), breed (string), mood (string), and hungry (boolean)`.
 // b. Add a prototype function called `playFetch`. It should set the dog's 
 // `hungry` property to `true`, set its mood property to `playful`, and log "Ruff!"
-// c. Add a prototype function called `feed`. If the dog is hungry, it should set `hungry` to `false` and print "Woof!" If the dog is not hungry, it should log "The dog doesn't look hungry"
-// d. Add a prototype function called `toString` that returns a description of the dog:
+// c. Add a prototype function called `feed`. If the dog is hungry, 
+// it should set `hungry` to `false` and print "Woof!" If the dog is not 
+// hungry, it should log "The dog doesn't look hungry"
+// d. Add a prototype function called `toString` that returns a description
+//  of the dog:
+
+function Dog(name, breed, mood, hungry) {
+    this.name = name;
+    this.breed = breed;
+    this.mood = mood;
+    this.hungry = hungry;
+}
+
+Dog.prototype.playFetch = function() {
+    this.hungry = true;
+    this.mood = "playful";
+    console.log("Ruff!");
+}
+
+Dog.prototype.feed = function() {
+    if(this.hungry === true) {
+        console.log(false)
+    } else {
+        console.log("The dog doesn't look hungry")
+    }
+
+}
+
+Dog.prototype.toString = function() {
+    return this.name + " is a " + this.breed + " " + this.mood + " " + this.hungry
+}
+
+let pokey = new Dog("Pokey", "huskey", "playful", false)
+let roxy = new Dog("Roxy", "mutt", "playful", false)
+
+console.log(roxy.playFetch())
