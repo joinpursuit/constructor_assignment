@@ -144,7 +144,7 @@ let outsideTempt = new Celsius(-1)
 // console.log(outsideTempt.getKelvinTemp())
 console.log(outsideTempt.isBelowFrezzing())
 
-<<<<<<< HEAD
+
 // ## Question 5
 
 // a. Create a constructor function called `Movie` that has properties for `name`, `year`, `genre`, `cast`, and `description`. Create an instance of your `Movie`
@@ -165,8 +165,9 @@ console.log(transformers.blurb())
 
 // b. Create an prototype function inside `Movie` called `blurb` that returns a formatted string describing the movie.
 
+
 // Ex: "Borat came out in 2006. It was an odd film starring Sacha Baron Cohen as a man named Borat who was visiting America from Kazakhstan."
 
 //
 
->>>>>>> 0032f1b35be7b685b55fc643887e92157fe44daf
+// Ex: "Borat came out in 2006. It was an odd film starring Sacha Baron Cohen as a man named Borat who was visiting America from Kazakhstan."
