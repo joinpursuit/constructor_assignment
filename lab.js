@@ -101,3 +101,18 @@ console.log(outsideTempt.getFahrenheitTemp())
 console.log(outsideTempt.getKelvinTemp())
 
 
+// 5
+
+function Movie(name,year,genre, cast,description){
+
+    this.name = name
+    this.year = year
+    this.genre = genre
+    this.cast = cast
+    this.description = description
+
+}
+
+let movie1 = new Movie("BadBoys 1", 1995, "action", "Will Smith, Martin Lawrence","Miami-Dade detectives Mike Lowrey (Will Smith) and Marcus Burnett (Martin Lawrence) blow a fuse when $100 million worth of heroin they recently confiscated is heisted from station headquarters." )
+
+Movie.prototype.blurb = function (){ console.log(`${this.name} came out in ${this.year}.It is a ${this.genre} starring ${this.cast}. In the movie, ${this.description}`)}
