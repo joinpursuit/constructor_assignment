@@ -21,7 +21,7 @@ Person.prototype.printName = function () {console.log(this.firstName+" "+this.mi
 let Dani =  new Person ("Danny", "A", "L")
 let Apple = new Person("Johnny", "Seed","Apple")
 
-console.log(Apple)
+// console.log(Apple)
 
 Apple.printName()
 
@@ -38,7 +38,7 @@ function Book(title,aurthor,rating) {
 Book.prototype.isGood = function () {if (this.rating >= 7){return true } else {return false} }
 let book1 = new Book('The Big Book Of Fun','Johny Walker', 6)
 
-console.log(book1.isGood())
+// console.log(book1.isGood())
 
 
 // Question 3
@@ -66,10 +66,10 @@ Dog.prototype.feed = function(){
     if(this.hungry === true){
 
         this.hungry = false
-        console.log("Woof!")
+        // console.log("Woof!")
     }else{
 
-        console.log("The dog doesnt look hungy!")
+        // console.log("The dog doesnt look hungy!")
     }
 
 }
@@ -96,9 +96,9 @@ Celsius.prototype.getFahrenheitTemp = function () {return (1.8 * this.celsius) +
 Celsius.prototype.getKelvinTemp =  function () {return this.celsius + 273} 
 
 let outsideTempt = new Celsius(10.0)
-console.log(outsideTempt)
-console.log(outsideTempt.getFahrenheitTemp())
-console.log(outsideTempt.getKelvinTemp())
+// console.log(outsideTempt)
+// console.log(outsideTempt.getFahrenheitTemp())
+// console.log(outsideTempt.getKelvinTemp())
 
 
 // 5
@@ -128,26 +128,26 @@ function Vector (x,y) {
 Vector.prototype.plus = function (vector2) {
     let x1 = this.x + vector2['x']
     let y2 = this.y + vector2['y']
-    return {x1,y2}
+    // return {x1,y2}
 }
 
 Vector.prototype.minus = function (vector2) {
     let x1 = this.x - vector2['x']
     let y1 = this.y - vector2['y']
-    return {x1,y1}
+    // return {x1,y1}
 }
 
 Vector.prototype.getLength = function () {
    let result = Math.pow(this.x,2) + Math.pow(this.y,2) 
-   return Math.sqrt(result)
+//    return Math.sqrt(result)
 }
 
 var v1 = new Vector(1, 2)
 var v2 = new Vector(2, 3)
-console.log(v1.plus(v2))
-console.log(v1.minus(v2))
+// console.log(v1.plus(v2))
+// console.log(v1.minus(v2))
 var v3 = new Vector(3, 4)
-console.log(v3.getLength())
+// console.log(v3.getLength())
 
 
 // Question 7
@@ -160,7 +160,7 @@ function Cylinder(radius,height){
 }
 
 Cylinder.prototype.getVolume = function () {
-    return Math.floor(Math.PI *(this.radius*this.radius) * this.height)
+    // return Math.floor(Math.PI *(this.radius*this.radius) * this.height)
 }
 
 //area	=	2	π	 r	2 	+	2	π	r	h
@@ -173,6 +173,52 @@ Cylinder.prototype.getSurfaceArea = function () {
 
 let Cylinder1 = new Cylinder (2,3)
 
-console.log(Cylinder1.getVolume())
+// console.log(Cylinder1.getVolume())
 
-console.log(Cylinder1.getSurfaceArea())
+// console.log(Cylinder1.getSurfaceArea())
+
+
+
+
+//  Question 8
+
+
+
+function Post(datePosted,user,text){
+    this.datePosted = datePosted
+    this.user = user
+    this.text = text
+    
+}
+
+let todayDate = new Date()
+
+Post.prototype.today = function (){
+   
+
+    if (todayDate.getYear() === this.datePosted.getYear() && todayDate.getMonth() === this.datePosted.getMonth() && todayDate.getDay() === this.datePosted.getDay()){
+        return true
+    }else{
+       return false
+    }
+}
+
+let post1 = new Post(new Date("October 31 2018"),'dug','hi')
+let post2 = new Post(new Date("October 27 2019"),'dug','bye')
+
+let postObj = [
+
+    post1,
+    post2
+    
+   
+
+]
+
+console.log(todayDate)
+
+
+
+// console.log(postObj)
+
+console.log(post2.today())
