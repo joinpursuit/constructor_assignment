@@ -97,3 +97,21 @@ Celsius.prototype.isBelowFreezing= function () {
 outsideTemp.isBelowFreezing();
 
 //Q5
+function Movie(name, year, genre, cast, description) {
+    this.name = name;
+    this.year = year;
+    this.genre = genre;
+    this.cast = cast;
+    this.description = description
+}
+
+let movie1 = new Movie("Soylent Green", 1973, "thriller", "Charlton Heston", "dystopian thriller film");
+
+Movie.prototype.blurb = function() {
+    console.log(`${this.name} is a ${this.year} ${this.genre} film whose protagonist was ${this.cast}.`);
+}
+
+// movie1.blurb();
+
+//Q6
+
