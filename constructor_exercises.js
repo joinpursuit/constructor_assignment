@@ -164,3 +164,33 @@ Cylinder.prototype.getSurfaceArea = function() {
 // console.log(cyl.getSurfaceArea());
 
 //Q8
+function Post(datePosted,user,text){
+    this.datePosted=datePosted;
+    this.user=user;
+    this.text=text;
+}
+let newPosts = [
+    new Post("2019-10-27", "Samantha", "Hey"), 
+    new Post("2019-10-01", "Jenn", "Goodbye"), 
+    new Post("2019-10-27", "Erik", "Yo")
+];
+
+let newPost2 = new Post("2019-10-27", "Betty", "Bonjour");
+// console.log(newPosts);
+
+Post.prototype.today = function() {
+    let today = new Date();
+    let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    if(this.datePosted === date) {
+        return true;
+    } else {
+        return false;
+    }
+}
+// console.log(newPost2.today());
+
+console.log(newPosts.filter((el) => {
+    if(el.today()) {
+        return el;
+    }
+}))
