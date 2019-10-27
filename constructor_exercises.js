@@ -67,4 +67,21 @@ Dog.prototype.toString = function() {
 // spot.toString();
 // console.log(spot);
 
-//Q4
+//Q4 
+let freezingPoint = {
+    celsius:0,
+    farenheit:32,
+    kelvin:273.2
+}
+function Celsius (celsius){
+    this.celsius=celsius;
+}
+Celsius.prototype.getFahrenheitTemp= function() {
+    console.log(1.8 * this.celsius + 32);
+}
+Celsius.prototype.getKelvinTemp= function() {
+    console.log(this.celsius+273);
+}    
+let outsideTemp = new Celsius(10.0)
+outsideTemp.getFahrenheitTemp();
+outsideTemp.getKelvinTemp();
