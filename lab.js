@@ -116,3 +116,36 @@ function Movie(name,year,genre, cast,description){
 let movie1 = new Movie("BadBoys 1", 1995, "action", "Will Smith, Martin Lawrence","Miami-Dade detectives Mike Lowrey (Will Smith) and Marcus Burnett (Martin Lawrence) blow a fuse when $100 million worth of heroin they recently confiscated is heisted from station headquarters." )
 
 Movie.prototype.blurb = function (){ console.log(`${this.name} came out in ${this.year}.It is a ${this.genre} starring ${this.cast}. In the movie, ${this.description}`)}
+
+
+
+// Question 6
+
+function Vector (x,y) {
+    this.x = x
+    this.y = y
+}
+Vector.prototype.plus = function (vector2) {
+    let x1 = this.x + vector2['x']
+    let y2 = this.y + vector2['y']
+    return {x1,y2}
+}
+
+Vector.prototype.minus = function (vector2) {
+    let x1 = this.x - vector2['x']
+    let y1 = this.y - vector2['y']
+    return {x1,y1}
+}
+
+Vector.prototype.getLength = function () {
+   let result = Math.pow(this.x,2) + Math.pow(this.y,2) 
+   return Math.sqrt(result)
+}
+
+var v1 = new Vector(1, 2)
+var v2 = new Vector(2, 3)
+console.log(v1.plus(v2))
+console.log(v1.minus(v2))
+var v3 = new Vector(3, 4)
+console.log(v3.getLength())
+
