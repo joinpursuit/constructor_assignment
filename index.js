@@ -11,3 +11,12 @@ let john = new Person("John", "Doe", "Michael")
   
 console.log(cassidy["firstName"])
 
+//Question 1b
+
+Person.prototype.fullName = function() {
+    return `${this.firstName} ${this.middleName} ${this.lastName}`
+}
+
+console.log(cassidy.fullName())
+
+
