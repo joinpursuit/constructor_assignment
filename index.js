@@ -1,25 +1,25 @@
-// //Question 1a
+//Question 1a
 
-// function Person (firstName, lastName, middleName) {
-//     this.firstName = firstName
-//     this.lastName = lastName
-//     this.middleName = middleName
-// }
+function Person (firstName, lastName, middleName) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.middleName = middleName
+}
   
-// let cassidy = new Person("Cassidy", "Beni", "E")
-// let john = new Person("John", "Doe", "Michael")
+let cassidy = new Person("Cassidy", "Beni", "E")
+let john = new Person("John", "Doe", "Michael")
   
-// console.log(cassidy["firstName"])
+console.log(cassidy["firstName"])
 
-// //Question 1b
+//Question 1b
 
-// Person.prototype.fullName = function() {
-//     return `${this.firstName} ${this.middleName} ${this.lastName}`
-// }
+Person.prototype.fullName = function() {
+    return `${this.firstName} ${this.middleName} ${this.lastName}`
+}
 
-// console.log(cassidy.fullName())
+console.log(cassidy.fullName())
 
-// //Question 2
+//Question 2a
 
 function Book (title, author, rating) {
     this.title = title
@@ -29,6 +29,8 @@ function Book (title, author, rating) {
 
 let firstBook = new Book ("Of Mice and Men", "John Steinbeck", 10)
 let secondBook = new Book ("Insomnia", "Stephen King", 10)
+
+//Question 2b
 
 Book.prototype.isGood = function() {
     if (this.rating >= 7) {
