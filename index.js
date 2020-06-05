@@ -41,3 +41,39 @@ Book.prototype.isGood = function() {
 }
 
 console.log(firstBook.isGood())
+
+//Question 3a - 3d
+
+function Dog (name, mood, breed, hungry) {
+    this.name = name
+    this.mood = mood
+    this.breed = breed
+    this.hungry = hungry
+}
+
+Dog.prototype.playFetch = function() {
+    this.hungry = true
+    this.mood = "playful"
+    console.log("Ruff!")
+
+}
+
+Dog.prototype.feed = function() {
+    if(this.hungry) {
+        this.hungry = false
+        console.log("Woof!")
+    } else {
+        console.log("The dog doesn't look hungry")
+    }
+
+}
+
+Dog.prototype.toString = function() {
+    return `${this.name} is a ${this.mood} ${this.breed} and it is ${this.hungry} that he is hungry.`
+    
+}
+
+let ace = new Dog("Ace", "playful", "poodle", true)
+ace.playFetch()
+ace.feed()
+console.log(ace.toString())
