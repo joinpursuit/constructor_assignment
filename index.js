@@ -77,3 +77,13 @@ let ace = new Dog("Ace", "playful", "poodle", true)
 ace.playFetch()
 ace.feed()
 console.log(ace.toString())
+
+//Question 4a
+
+let freezingPoint = {
+    celsius: 0,
+    fahrenheit: 32,
+    kelvin: 273.15
+}
+
+
