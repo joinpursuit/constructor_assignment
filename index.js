@@ -83,7 +83,24 @@ console.log(ace.toString())
 let freezingPoint = {
     celsius: 0,
     fahrenheit: 32,
-    kelvin: 273.15
+    kelvin: 273
 }
 
+//Question 4b
 
+function Celsius (celsius) {
+    this.celsius = celsius 
+}
+
+Celsius.prototype.getFahrenheitTemp = function () {
+    return (this.celsius * 1.8) + 32
+}
+
+Celsius.prototype.getKelvinTemp = function () {
+    return this.celsius + 273
+}
+
+let outsideTempt = new Celsius(10.0)
+outsideTempt.celsius //returns 10.0
+outsideTempt.getKelvinTemp() //returns 283.0
+outsideTempt.getFahrenheitTemp() //returns 50.0
