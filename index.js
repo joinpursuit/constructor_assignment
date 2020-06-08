@@ -33,7 +33,7 @@ let secondBook = new Book ("Insomnia", "Stephen King", 10)
 //Question 2b
 
 Book.prototype.isGood = function() {
-    if (this.rating >= 7) {
+    if(this.rating >= 7) {
         return true
     } else {
         return false
@@ -100,7 +100,18 @@ Celsius.prototype.getKelvinTemp = function () {
     return this.celsius + 273
 }
 
+//Question 4c
+
+Celsius.prototype.isBelowFreezing = function () {
+    if(this.celsius <= freezingPoint.celsius) {
+        return true
+    } else {
+        return false
+    }
+}
+
 let outsideTempt = new Celsius(10.0)
 outsideTempt.celsius //returns 10.0
 outsideTempt.getKelvinTemp() //returns 283.0
 outsideTempt.getFahrenheitTemp() //returns 50.0
+console.log(outsideTempt.isBelowFreezing())
