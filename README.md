@@ -99,3 +99,4 @@ a. Write a constructor function called `Post` that has properties `datePosted`, 
 b. Create a prototype function that returns whether or not the post was made today.
 
 c. Filter your array of `Post` objects to only include posts made today.
+ 
